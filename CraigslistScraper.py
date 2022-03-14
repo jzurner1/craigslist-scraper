@@ -9,23 +9,23 @@ def printList(plist):
 
 
 # --------------- VARIABLES ---------------
-ownerType = "owner"
-doSearch = True
-searchTerm = "datsun"
+ownerType = "owner"  # "owner", "dealer", or "both"
+doSearch = True  # do you want to search a term?
+searchTerm = "Ford"  # specific search term
 doPrice = True
 minPrice = "0"
-maxPrice = "50000000"
+maxPrice = "100000"
 doMiles = True
 minMiles = "0"
-maxMiles = "10000000"
+maxMiles = "1000000"
 doYear = True
 minYear = "1900"
-maxYear = "2050"
-avoidWords = ["part out", "parting out", "credit", "lease", "no title"]
-goodWords = ["datsun"]
+maxYear = "2010"
+avoidWords = ["part out", "parting out", "credit", "lease", "no title"]  # this part is pointless now but I kept it in
+goodWords = [""]  # same with this part
 
 # --------------- SETUP ---------------
-PATH = "Z:\Installs\Chromedriver\chromedriver.exe"
+PATH = "(path to chromedriver.exe)"
 driver = webdriver.Chrome(PATH)
 driver.get("https://baltimore.craigslist.org/")
 
@@ -142,12 +142,6 @@ for n in range(len(resultList)):
 
 
 
-'''
-print(priceList)
-print(locationList)
-print(titleList)
-print(dateList)
-'''
 
 for n in range(len(priceList)):
     locationList[n] = "'" + locationList[n] + "'"
